@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <title>Exercice_5</title>
-    <meta charset="UTF-8" />
-    <script src="assets/js/script.js"></script>
-    </head>
-    <body>
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 5</title>
+</head>
+<body>
     <form>
-        <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber" /><br />
-        <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber" /><br />
-        <button id="submit" name="submit" onclick="multiplyReel()">Valider</button>
+      <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/><br/>
+      <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/><br/>
+      <button  id="submit" name ="submit" onclick="getRound()">Valider</button>
     </form>
-    </body>
- </html>
+
+  <script>
+    alert('Veuillez entrer des nombres à virgule')
+    function getRound(){
+      var regexp = new RegExp (/[0-9]+.[0-9]/)
+      var firstNumber = document.getElementById('firstNumber').value;
+      var secondNumber = document.getElementById('secondNumber').value;
+      if (regexp.test(firstNumber) & regexp.test(secondNumber)) {
+        var result = Math.trunc(firstNumber) * secondNumber;
+        alert(result);
+      }else {
+        alert('Veuillez entrer des nombres à virgule');
+      }
+    }
+  </script>
+</body>
+</html>
